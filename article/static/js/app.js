@@ -39,6 +39,31 @@ routerApp.controller('homeController', function($scope, $http, $location) {
                     return;
                 });
         };
+
+
+        $scope.upvote = function(item) {
+
+
+            if (item.up_votes == null)
+                 item.up_votes = 1;
+            else
+                item.up_votes = parseInt(item.up_votes)+1;
+
+            var back_url = '/article/'+item.id+'/';
+
+            $http.patch(back_url, item, {
+                    data: JSON
+                }).success(function(data, status, headers, config) {
+                        $scope.tocrawl()
+                    return;
+                })
+
+            .error(function(data, status, headers, config) {
+                    window.alert("Error ");
+                    return;
+                });
+        };
+
         $scope.tocrawl()
 
     });

@@ -15,7 +15,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class ArticleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Article
-        fields = ('title', 'content', 'author_name', 'up_votes')        
+        fields = ('id', 'title', 'content', 'author_name', 'up_votes')        
 
 # Serializers define the API representation.
 class ArticlePostSerializer(serializers.HyperlinkedModelSerializer):
