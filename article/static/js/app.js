@@ -16,7 +16,7 @@ routerApp.controller('homeController', function($scope, $http, $location) {
 
         window.console.log("In home controller...");
         $scope.response_data = {};
-        
+
         $scope.tocrawl = function() {
 
             // forming the url    
@@ -24,7 +24,8 @@ routerApp.controller('homeController', function($scope, $http, $location) {
                 url: null,
                 depth: null
             };
-            var back_url = '/article/';
+
+            var back_url = '/article/?ordering=-up_votes';
 
             $http.get(back_url, {
                     data: JSON
