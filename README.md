@@ -9,11 +9,11 @@ How ​to ​setup ​and ​install ​anything ​needed ​for ​testing ​
 - You may run the requirements.txt file or refer the same for the additional packages to be installed.
 
 How ​to ​run ​the ​project?
-Once you have installed the dependent packages from requirements.txt.
-move to team_management folder inside the project
-Do python manage.py makemigrations
-Do python manage.py migrate
-use python manage.py runserver to the run the project locally on your system.
+- Once you have installed the dependent packages from requirements.txt.
+- move to team_management folder inside the project
+- Do python manage.py makemigrations
+- Do python manage.py migrate
+- use python manage.py runserver to the run the project locally on your system.
 
 #How ​to ​test ​the ​project, ​ideally ​with ​example ​CURL ​commands ​that ​exercise ​the ​various rest ​endpoints?
 
