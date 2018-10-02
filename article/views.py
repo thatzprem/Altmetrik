@@ -7,9 +7,12 @@ from article.models import Article
 from rest_framework import generics, filters
 from rest_framework.viewsets import ModelViewSet
 
-def index(request):
-	return HttpResponse("Hello there!!")
-
+def index(request, template_name=None):
+#     return HttpResponse("Hello, world. You're at the crawler index.")
+    if template_name is None:
+        template_name = 'index.html'
+        
+    return render(request, template_name, None)
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):

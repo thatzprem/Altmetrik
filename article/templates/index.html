@@ -1,0 +1,77 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#00BCD4">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta http-equiv="Cache-control" content="no-cache">
+    
+    <!-- TITLE -->
+    <link rel="shortcut icon" href="images/icon.png" />
+    <title>Content Management</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script   src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>    
+    <script src="{% static "js/app.js" %}"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.js"></script>
+    
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="routerApp">
+    
+	<!-- NAVIGATION -->
+	<nav class="navbar navbar-inverse" role="navigation" style="margin-bottom: 0px;">
+	    <div class="navbar-header">
+	        <a class="navbar-brand" ui-sref="home">Content updation - in Python & Django using AngularJS</a>
+	    </div>
+	</nav>
+	    {% verbatim %}
+
+	<div class="container" ng-controller="homeController">
+	    <div class="jumbotron text-center">
+
+
+		<table class="table table-bordered table-hover">
+		    <thead>
+		        <tr>
+		           <th>Title</th>
+		           <th>Author</th>
+		           <th>Content</th>
+		           <th>Up votes</th>		           		           
+		         </tr>
+		    </thead>
+		    <tbody>
+		        <tr ng-repeat="item in response_data">
+		           <td>{{ item.title }}</td>
+		           <td>{{item.author_name }}</td>
+		           <td>{{item.content }}</td>
+		           <td>{{item.up_votes }}</td>
+
+		        </tr>
+		     </tbody>
+		</table>
+
+
+
+    	</div>
+	</div>
+           
+    <br>
+
+
+    {% endverbatim %}    	
+
+</body>
+</html>

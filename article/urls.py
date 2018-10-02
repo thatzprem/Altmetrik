@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers
 from rest_framework.routers import DefaultRouter
 from article.views import UserViewSet, ArticleViewSet
+from . import views
 
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -14,5 +15,6 @@ router.register(r'article', ArticleViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^interface/',views.index,name="index"), 
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
